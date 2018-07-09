@@ -1,10 +1,11 @@
-<header class="header-6">
+<header class="header-4 nav-background">
     <div class="branding">
-        ...
+        <a class="nav-link">
+            <span class="logo dell-emc-logo"></span>
+        </a>
     </div>
     <div class="header-nav">
-        <a href="javascript://" class="active nav-link nav-text">Dashboard</a>
-        <a href="javascript://" class="nav-link nav-text">Interactive Analytics</a>
+        <a href="javascript://" routerLink="/dashboard" class="active nav-link nav-text">Dashboard</a>
     </div>
     <div class="header-actions">
         <a href="javascript://" class="nav-link nav-icon">
@@ -12,3 +13,20 @@
         </a>
     </div>
 </header>
+<nav class="subnav">
+    <ul class="nav">
+        <li class="nav-item">
+            <a class="nav-link active" routerLink="/dashboard" href="#">Dashboard</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Management</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Cloud</a>
+        </li>
+        <li class="nav-item">
+            <a class="nav-link" href="#">Tenants</a>
+        </li>
+    </ul>
+</nav>
+<router-outlet></router-outlet>
