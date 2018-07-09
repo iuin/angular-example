@@ -6,8 +6,8 @@ import { HttpClient, HttpResponse } from '@angular/common/http';
 
 import { Hero } from './hero';
 import { HeroesService } from './heroes.service';
-import { HttpErrorHandler } from '../http-error-handler.service';
-import { MessageService } from '../message.service';
+import { HttpErrorHandler } from '../../core/http-error-handler.service';
+import { MessageService } from '../../core/message.service';
 
 describe('HeroesService', () => {
   let httpClient: HttpClient;

@@ -4,7 +4,7 @@ import { HttpClient, HttpHeaders, HttpParams } from '@angular/common/http';
 import { Observable, of } from 'rxjs';
 import { catchError, map } from 'rxjs/operators';
 
-import { HttpErrorHandler, HandleError } from '../http-error-handler.service';
+import { HttpErrorHandler, HandleError } from '../../core/http-error-handler.service';
 
 export interface NpmPackageInfo {
   name: string;

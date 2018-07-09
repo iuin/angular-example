@@ -4,28 +4,42 @@ import { FormsModule }      from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientXsrfModule } from '@angular/common/http';
 
-import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './in-memory-data.service';
+import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
+import { ClarityModule } from "@clr/angular";
 
-import { RequestCache, RequestCacheWithMap } from './request-cache.service';
+import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
+import { InMemoryDataService }  from './core/in-memory-data.service';
+
+import { RequestCache, RequestCacheWithMap } from './core/request-cache.service';
 
 import { AppComponent }         from './app.component';
-import { AuthService }          from './auth.service';
-import { ConfigComponent }      from './config/config.component';
-import { DownloaderComponent }  from './downloader/downloader.component';
-import { HeroesComponent }      from './heroes/heroes.component';
-import { HttpErrorHandler }     from './http-error-handler.service';
-import { MessageService }       from './message.service';
-import { MessagesComponent }    from './messages/messages.component';
-import { PackageSearchComponent } from './package-search/package-search.component';
-import { UploaderComponent }    from './uploader/uploader.component';
+import { AuthService }          from './core/auth.service';
+import { ConfigComponent }      from './business/config/config.component';
+import { DownloaderComponent }  from './business/downloader/downloader.component';
+import { HeroesComponent }      from './business/heroes/heroes.component';
+import { HttpErrorHandler }     from './core/http-error-handler.service';
+import { MessageService }       from './core/message.service';
+import { MessagesComponent }    from './business/messages/messages.component';
+import { PackageSearchComponent } from './business/package-search/package-search.component';
+import { UploaderComponent }    from './business/uploader/uploader.component';
 
-import { httpInterceptorProviders } from './http-interceptors/index';
+import { httpInterceptorProviders } from './core/http-interceptors/index';
+
+import { CoreModule } from './core/core.module';
+import { SharedModule } from './shared/shared.module';
+
+import { NavModule } from './layout/nav/nav.module';
+import { ROUTING } from "./app.routing";
 
 @NgModule({
   imports: [
     BrowserModule,
     FormsModule,
+    BrowserAnimationsModule,
+    ClarityModule,
+    CoreModule,
+    SharedModule,
+    NavModule,
     // import HttpClientModule after BrowserModule.
     HttpClientModule,
     HttpClientXsrfModule.withOptions({
@@ -42,7 +56,8 @@ import { httpInterceptorProviders } from './http-interceptors/index';
         passThruUnknownUrl: true,
         put204: false // return entity after PUT/update
       }
-    )
+    ),
+    ROUTING
   ],
   declarations: [
     AppComponent,

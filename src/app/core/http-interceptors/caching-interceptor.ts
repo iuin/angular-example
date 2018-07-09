@@ -8,7 +8,7 @@ import { Observable, of } from 'rxjs';
 import { startWith, tap } from 'rxjs/operators';
 
 import { RequestCache } from '../request-cache.service';
-import { searchUrl } from '../package-search/package-search.service';
+import { searchUrl } from '../../business/package-search/package-search.service';
 
 
 /**

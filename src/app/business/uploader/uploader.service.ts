@@ -7,7 +7,7 @@ import {
 import { of } from 'rxjs';
 import { catchError, last, map, tap } from 'rxjs/operators';
 
-import { MessageService } from '../message.service';
+import { MessageService } from '../../core/message.service';
 
 @Injectable()
 export class UploaderService {

@@ -3,7 +3,7 @@ import { HttpClient } from '@angular/common/http';
 
 import { tap } from 'rxjs/operators';
 
-import { MessageService } from '../message.service';
+import { MessageService } from '../../core/message.service';
 
 @Injectable()
 export class DownloaderService {

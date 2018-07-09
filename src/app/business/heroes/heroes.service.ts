@@ -7,7 +7,7 @@ import { Observable } from 'rxjs';
 import { catchError } from 'rxjs/operators';
 
 import { Hero } from './hero';
-import { HttpErrorHandler, HandleError } from '../http-error-handler.service';
+import { HttpErrorHandler, HandleError } from '../../core/http-error-handler.service';
 
 const httpOptions = {
   headers: new HttpHeaders({

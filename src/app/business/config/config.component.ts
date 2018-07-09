@@ -1,6 +1,6 @@
 import { Component } from '@angular/core';
 import { Config, ConfigService } from './config.service';
-import { MessageService } from '../message.service';
+import { MessageService } from '../../core/message.service';
 
 @Component({
   selector: 'app-config',
