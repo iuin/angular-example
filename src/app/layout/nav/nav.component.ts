@@ -1,18 +1,26 @@
 import { Component, OnInit, ViewChild, ElementRef } from '@angular/core';
+import { NavService } from "./nav.service";
 
 @Component({
     selector: 'emc-nav',
     templateUrl: './nav.component.html',
-    styleUrls: ['./nav.component.scss']
+    styleUrls: ['./nav.component.scss'],
+    providers: [NavService]
 })
 export class NavComponent implements OnInit {
 
     @ViewChild('navTabs') navTabs: ElementRef;
     @ViewChild('headerNavs') headerNavs: ElementRef;
 
-    constructor() { }
+    public navMenus: any[] = [];
 
-    ngOnInit(): void { }
+    constructor(private service: NavService) { }
+
+    ngOnInit(): void {
+        this.service.getNavs().subscribe( data => {
+            this.navMenus = data;
+        });
+    }
 
     /** switch nav tab bar style, activate current element */
     private switchTab(tab: MouseEvent) {

@@ -4,11 +4,8 @@
             <span class="logo dell-emc-logo"></span>
         </a>
     </div>
-    <div class="header-nav" (click)="switchNav($event)">
-        <a href="javascript://" class="active nav-link nav-text" routerLink="/dashboard">Dashboard</a>
-    </div>
-    <div class="header-nav" (click)="switchNav($event)">
-        <a href="javascript://" class="nav-link nav-text" href="#">Asset Managent</a>
+    <div class="header-nav" (click)="switchNav($event)" *ngFor="let menu of navMenus; index as i;">
+        <a href="javascript://" class="nav-link nav-text" [ngClass]="{'active': i == 0}" routerLink="{{menu.url}}">{{menu.name}}</a>
     </div>
     <div class="header-actions">
         <a href="javascript://" class="nav-link nav-icon">

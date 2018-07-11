@@ -13,6 +13,10 @@ export class InMemoryDataService implements InMemoryDbService {
             { id: 1, name: 'abc' },
             { id: 2, name: 'cde' }
         ];
-        return { heroes, dashboard };
+        const navs = [
+            { id: 1, name: 'DashBoard', url: '/dashboard' },
+            { id: 2, name: 'Asset Management', url: '' }
+        ];
+        return { heroes, dashboard, navs };
     }
 }
