@@ -3,6 +3,7 @@ import { BrowserModule }    from '@angular/platform-browser';
 import { FormsModule }      from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientXsrfModule } from '@angular/common/http';
+import { CommonModule } from '@angular/common';
 
 import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ClarityModule } from "@clr/angular";
@@ -35,6 +36,7 @@ import { ROUTING } from "./app.routing";
   imports: [
     BrowserModule,
     FormsModule,
+    CommonModule,
     BrowserAnimationsModule,
     ClarityModule,
     CoreModule,
