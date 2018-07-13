@@ -1,6 +1,6 @@
-import { NgModule }         from '@angular/core';
-import { BrowserModule }    from '@angular/platform-browser';
-import { FormsModule }      from '@angular/forms';
+import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { HttpClientModule } from '@angular/common/http';
 import { HttpClientXsrfModule } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
@@ -9,20 +9,20 @@ import { BrowserAnimationsModule } from "@angular/platform-browser/animations";
 import { ClarityModule } from "@clr/angular";
 
 import { HttpClientInMemoryWebApiModule } from 'angular-in-memory-web-api';
-import { InMemoryDataService }  from './core/in-memory-data.service';
+import { InMemoryDataService } from './core/in-memory-data.service';
 
 import { RequestCache, RequestCacheWithMap } from './core/request-cache.service';
 
-import { AppComponent }         from './app.component';
-import { AuthService }          from './core/auth.service';
-import { ConfigComponent }      from './business/config/config.component';
-import { DownloaderComponent }  from './business/downloader/downloader.component';
-import { HeroesComponent }      from './business/heroes/heroes.component';
-import { HttpErrorHandler }     from './core/http-error-handler.service';
-import { MessageService }       from './core/message.service';
-import { MessagesComponent }    from './business/messages/messages.component';
+import { AppComponent } from './app.component';
+import { AuthService } from './core/auth.service';
+import { ConfigComponent } from './business/config/config.component';
+import { DownloaderComponent } from './business/downloader/downloader.component';
+import { HeroesComponent } from './business/heroes/heroes.component';
+import { HttpErrorHandler } from './core/http-error-handler.service';
+import { MessageService } from './core/message.service';
+import { MessagesComponent } from './business/messages/messages.component';
 import { PackageSearchComponent } from './business/package-search/package-search.component';
-import { UploaderComponent }    from './business/uploader/uploader.component';
+import { UploaderComponent } from './business/uploader/uploader.component';
 
 import { httpInterceptorProviders } from './core/http-interceptors/index';
 
@@ -31,7 +31,7 @@ import { SharedModule } from './shared/shared.module';
 
 import { NavModule } from './layout/nav/nav.module';
 import { ROUTING } from "./app.routing";
-
+import { DashBoardComponent } from './layout/dashboard/dashboard.component';
 @NgModule({
   imports: [
     BrowserModule,
@@ -69,6 +69,7 @@ import { ROUTING } from "./app.routing";
     MessagesComponent,
     UploaderComponent,
     PackageSearchComponent,
+    DashBoardComponent,
   ],
   providers: [
     AuthService,
@@ -77,6 +78,6 @@ import { ROUTING } from "./app.routing";
     { provide: RequestCache, useClass: RequestCacheWithMap },
     httpInterceptorProviders
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [AppComponent]
 })
-export class AppModule {}
+export class AppModule { }

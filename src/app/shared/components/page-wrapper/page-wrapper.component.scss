@@ -1,0 +1,66 @@
+$minDetailWidth: 250px;
+$maxDetailWidth: 300px;
+$padding: 24px;
+@mixin flexContainer($direction) {
+    display: flex;
+    flex-direction: $direction;
+}
+
+:host(.page-wrapper) {
+    width: 100%;
+    display: block;
+    overflow-y: auto;
+
+    &.fullscreen {
+        position: fixed;
+        left: 0;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        overflow-y: auto;
+        display: block;
+        background: #F4F4F4;
+    }
+
+    .page-header {
+        padding: 0;
+        overflow: visible;
+        position: relative;
+        h2, .header-wrapper {
+            margin: $padding;
+            display: inline-block;
+        }
+        // Float right,
+        .fullscreen-button {
+            float: right;
+            margin: $padding;
+        }
+
+        .nav {
+            padding-left: $padding;
+            box-shadow: none;
+            border-bottom: 1px solid #ccc;
+            margin-bottom: -1px;
+            margin-top: -24px;
+        }
+
+    }
+    //remove styles from the buttons
+    button {
+        margin-top: 0;
+        padding: 0;
+        cursor: pointer;
+        background: transparent;
+        border: 0;
+        min-width: 0;
+    }
+
+}
+
+:host(.page-wrapper.fixed-header) {
+    overflow-y: visible;
+    @include flexContainer(column);
+    .page-header {
+        border-bottom: 1px solid #CCC;
+    }
+}

@@ -1,0 +1,27 @@
+<div class="page-header">
+    <div class="header-wrapper" *ngIf="header; else titleText">
+        <ng-content select="emc-page-header"></ng-content>
+    </div>
+    <ng-template #titleText>
+        <h2 id="page-{{pageId}}">{{title}}</h2>
+    </ng-template>
+    <div class="fullscreen-button" *ngIf="allowFullScreen">
+        <button id="fullscreenButton" class="btn btn-sm btn-link" (click)="toggleFullScreen()">
+            <clr-icon [attr.shape] = "fullscreenShape" size = "28"></clr-icon>
+        </button>
+    </div>
+
+    <ul id="pageTabs" class="nav" *ngIf="tabs" role="tablist">
+        <li role="presentation" class="nav-item" *ngFor="let tab of tabs; let i = index">
+            <button
+                id="tab-{{i}}"
+                class="btn btn-link nav-link"
+                type="button"
+                routerLinkActive="active"
+                [routerLinkActiveOptions]="{exact: true}"
+                [routerLink]="tab.path">{{tab.name}}</button>
+        </li>
+    </ul>
+</div>
+
+<ng-content></ng-content>
