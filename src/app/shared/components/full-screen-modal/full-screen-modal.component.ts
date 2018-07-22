@@ -1,4 +1,4 @@
-import { Component, OnInit, Input, HostBinding, Output, EventEmitter, ViewChild, ElementRef, Renderer2 } from '@angular/core';
+import { Component, OnInit, Input, HostBinding, HostListener, Output, EventEmitter, ViewChild, ElementRef, Renderer2, OnChanges, SimpleChange} from '@angular/core';
 
 import {
     trigger,
@@ -13,15 +13,14 @@ import {
     templateUrl: './full-screen-modal.component.html',
     styleUrls: ['./full-screen-modal.component.scss']
 })
-export class FullScreenModalComponent implements OnInit {
+export class FullScreenModalComponent implements OnInit, OnChanges {
 
-    
+    @Output('clrModalOpenChange') _openChanged: EventEmitter<boolean> = new EventEmitter<boolean>(false);
 
     @ViewChild('ele') ele: ElementRef;
 
-    @HostBinding('@layout') layout = 'normal';
-
-    @Input('opened') opened;
+    @HostBinding('class.open')
+    @Input('opened') opened = false;
 
     private fullscreen = false;
 
@@ -55,4 +54,20 @@ export class FullScreenModalComponent implements OnInit {
         return this.fullscreen ? 'window-restore' : 'window-max';
     }
 
+    ngOnChanges(changes: { [propName: string]: SimpleChange }): void {
+        console.log(changes.opened);
+    }
+
+    open(): void {
+        if (this.opened === true) {
+          return;
+        }
+        this.opened = true;
+        this._openChanged.emit(true);
+      }
+
+    close(): void {
+        this.opened = false;
+        this._openChanged.emit(false);
+    }
 }

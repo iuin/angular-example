@@ -1,6 +1,7 @@
-<clr-modal [(clrModalOpen)]="opened" [clrModalSize]="'xl'" [clrModalClosable]="true" >
+<clr-modal [(clrModalOpen)]="opened" [clrModalSize]="'xl'" [clrModalClosable]="false" >
     
         <h3 class="modal-title">I have a nice title  
+            <button class="close" style="margin-right: 10px" (click)="close()"><clr-icon  [attr.shape] = "'close'"></clr-icon></button>
             <button class="close" style="margin-right: 10px" (click)="toggleFullScreen()"><clr-icon  [attr.shape] = "fullscreenShape"></clr-icon></button>
         </h3>
         <div class="modal-body" #ele>

@@ -41,7 +41,7 @@
     </div>
 </clr-modal> -->
 
-<full-screen-modal [opened]="opened">
+<full-screen-modal [(opened)]="opened">
     <clr-wizard #wizard [(clrWizardOpen)]="opened" style="height: 100%;" [clrWizardSize]="'xl'" [clrWizardForceForwardNavigation]="true" class="clr-wizard--inline clr-wizard--no-shadow clr-wizard--no-title"
                 [clrWizardPreventModalAnimation]="true">
                 <clr-wizard-title>Jump-To Wizard</clr-wizard-title>
