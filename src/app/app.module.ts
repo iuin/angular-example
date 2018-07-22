@@ -24,7 +24,7 @@ import { MessagesComponent } from './business/messages/messages.component';
 import { PackageSearchComponent } from './business/package-search/package-search.component';
 import { UploaderComponent } from './business/uploader/uploader.component';
 
-import { httpInterceptorProviders } from './core/http-interceptors/index';
+import { httpInterceptorProviders } from './core/http-interceptors';
 
 import { CoreModule } from './core/core.module';
 import { SharedModule } from './shared/shared.module';

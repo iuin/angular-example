@@ -1,0 +1,9 @@
+<clr-modal [(clrModalOpen)]="opened" [clrModalSize]="'xl'" [clrModalClosable]="true" >
+    
+        <h3 class="modal-title">I have a nice title  
+            <button class="close" style="margin-right: 10px" (click)="toggleFullScreen()"><clr-icon  [attr.shape] = "fullscreenShape"></clr-icon></button>
+        </h3>
+        <div class="modal-body" #ele>
+            <ng-content></ng-content>
+        </div>
+</clr-modal>
