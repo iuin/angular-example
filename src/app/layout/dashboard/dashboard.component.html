@@ -5,15 +5,15 @@
                 <div class="card-header">
                     Assets | Overview
                 </div>
-                <div class="card-block">
+                <div class="card-block" [ngStyle]="{'height': alertBlock.clientHeight + 'px'}">
                     <div class="row">
                         <div class="col-sm-12 col-md-4">
                             Assets
                         </div>
-                        <div class="col-sm-12 col-md-4" style="border-left: 1px solid #cccccc;border-right: 1px solid #cccccc">
+                        <div class="col-sm-12 col-md-4 split-line">
                             Unprotected
                         </div>
-                        <div class="col-sm-12 col-md-4">
+                        <div class="col-sm-12 col-md-4 split-line">
                             Errors
                         </div>
                     </div>
@@ -25,27 +25,27 @@
                 <div class="card-header">
                     Alerts | All
                 </div>
-                <div class="card-block">
+                <div class="card-block" #alertBlock>
                     <div class="card-text">
-                        <table class="table">
+                        <table class="table table-noborder">
                             <thead>
                                 <tr>
-                                    <th class="left">Name</th>
-                                    <th class="left">Weakness</th>
+                                    <th class="left">Job</th>
+                                    <th class="left">Date</th>
                                 </tr>
                             </thead>
                             <tbody>
                                 <tr>
-                                    <td class="left">Frankenstein</td>
-                                    <td class="left">Fire</td>
+                                    <td class="left">
+                                        <a class="link">Backup job failed</a>
+                                    </td>
+                                    <td class="left">25/07/2018</td>
                                 </tr>
                                 <tr>
-                                    <td class="left">Dracula</td>
-                                    <td class="left">Garlic</td>
-                                </tr>
-                                <tr>
-                                    <td class="left">Wolfman</td>
-                                    <td class="left">Squirrels</td>
+                                    <td class="left">
+                                        <a class="link">Backup job failed</a>
+                                    </td>
+                                    <td class="left">26/07/2018</td>
                                 </tr>
                             </tbody>
                         </table>
@@ -61,45 +61,61 @@
                 <div class="card-header">
                     Capacity | Overview
                 </div>
-                <div class="card-block">
+                <div class="card-block" #capacityBlock>
                     <div class="row">
                         <div class="col-sm-12 col-md-4">
                             Used
                         </div>
-                        <div class="col-sm-12 col-md-8" style="border-left: 1px solid #cccccc;">
-                            <table class="table">
+                        <div class="col-sm-12 col-md-8 split-line">
+                            <table class="table table-noborder">
                                 <thead>
                                     <tr>
-                                        <th>Decimal</th>
-                                        <th>Hexadecimal</th>
-                                        <th>Binary</th>
-                                        <th>Roman Numeral</th>
+                                        <th>Location</th>
+                                        <th>Storage Used</th>
+                                        <th>% Full</th>
+                                        <th>Space Left</th>
+                                        <th>Days Until Full</th>
                                     </tr>
                                 </thead>
                                 <tbody>
                                     <tr>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>1</td>
-                                        <td>I</td>
+                                        <td>GSAN</td>
+                                        <td>
+                                            <div class="progress-block">
+                                                <div class="progress-static">
+                                                    <div class="progress-meter" data-value="80"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>80%</td>
+                                        <td>100 GB</td>
+                                        <td>10 days</td>
                                     </tr>
                                     <tr>
-                                        <td>5</td>
-                                        <td>5</td>
-                                        <td>101</td>
-                                        <td>V</td>
+                                        <td>DD1</td>
+                                        <td>
+                                            <div class="progress-block">
+                                                <div class="progress-static danger">
+                                                    <div class="progress-meter" data-value="50"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>50%</td>
+                                        <td>50 TB</td>
+                                        <td>300 days</td>
                                     </tr>
                                     <tr>
-                                        <td>10</td>
-                                        <td>A</td>
-                                        <td>1010</td>
-                                        <td>X</td>
-                                    </tr>
-                                    <tr>
-                                        <td>15</td>
-                                        <td>F</td>
-                                        <td>1111</td>
-                                        <td>XV</td>
+                                        <td>DD2</td>
+                                        <td>
+                                            <div class="progress-block">
+                                                <div class="progress-static success">
+                                                    <div class="progress-meter" data-value="5"></div>
+                                                </div>
+                                            </div>
+                                        </td>
+                                        <td>5%</td>
+                                        <td>95 TB</td>
+                                        <td>210 days</td>
                                     </tr>
                                 </tbody>
                             </table>
@@ -112,6 +128,84 @@
             <div class="card">
                 <div class="card-header">
                     Jobs | Backup
+                </div>
+                <div class="card-block" [ngStyle]="{ height: capacityBlock.clientHeight + 'px'}">
+                    <div class="card-text">
+                        ...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    Quick Tasks
+                </div>
+                <div class="card-block">
+                    <div class="card-text">
+                        <ul class="list-unstyled">
+                            <li>
+                                <a class="link">Start backup</a>
+                            </li>
+                            <li>
+                                <a class="link">Create Data Domain</a>
+                            </li>
+                            <li>
+                                <a class="link">Create new backup policy</a>
+                            </li>
+                            <li>
+                                <a class="link">Create replication destination</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    Client | Information
+                </div>
+                <div class="card-block">
+                    <div class="card-text">
+                        <table class="table table-noborder">
+                            <thead>
+                                <tr>
+                                    <th class="left">Plugin Type</th>
+                                    <th>Plugin Count</th>
+                                    <th>Protected GB</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>AIX File System</td>
+                                    <td>32</td>
+                                    <td>14931.17</td>
+                                </tr>
+                                <tr>
+                                    <td>AIX File System</td>
+                                    <td>32</td>
+                                    <td>14931.17</td>
+                                </tr>
+
+                                <tr>
+                                    <td style="border-top: 1px solid #e4e4e4; font-weight: bold">Total</td>
+                                    <td style="border-top: 1px solid #e4e4e4; font-weight: bold">64</td>
+                                    <td style="border-top: 1px solid #e4e4e4; font-weight: bold">29962.34</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    Jobs | Replication
                 </div>
                 <div class="card-block">
                     <div class="card-text">
