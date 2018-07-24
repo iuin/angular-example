@@ -1,79 +1,124 @@
-<button class="btn btn-primary" (click)="opened = true;">Primary</button>
-
-<!-- <clr-modal [(clrModalOpen)]="opened" [clrModalSize]="'xl'" [clrModalClosable]="false">
-    <div class="modal-body">
-        <emc-page-wrapper title="wrapper" [allowFullScreen]="true">
-            <clr-wizard #wizard [(clrWizardOpen)]="opened" [clrWizardSize]="'xl'" [clrWizardForceForwardNavigation]="true" class="clr-wizard--inline clr-wizard--no-shadow clr-wizard--no-title"
-                [clrWizardPreventModalAnimation]="true">
-                <clr-wizard-title>Jump-To Wizard</clr-wizard-title>
-
-                <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>
-                <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
-                <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
-                <clr-wizard-button [type]="'finish'">Done</clr-wizard-button>
-
-                <clr-wizard-page>
-                    <ng-template clrPageTitle></ng-template>
-                    ...1
-                </clr-wizard-page>
-
-                <clr-wizard-page>
-                    <ng-template clrPageTitle>Page 2</ng-template>
-                    ...2
-                </clr-wizard-page>
-
-                <clr-wizard-page #pageThree>
-                    <ng-template clrPageTitle>Page 3</ng-template>
-                    ...3
-                </clr-wizard-page>
-
-                <clr-wizard-page>
-                    <ng-template clrPageTitle>Page 4</ng-template>
-                    ...4
-                </clr-wizard-page>
-
-                <clr-wizard-page #pageFive>
-                    <ng-template clrPageTitle>Page 5</ng-template>
-                    ...5
-                </clr-wizard-page>
-            </clr-wizard>
-        </emc-page-wrapper>
+<section>
+    <div class="row">
+        <div class="col-sm-12 col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    Assets | Overview
+                </div>
+                <div class="card-block">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-4">
+                            Assets
+                        </div>
+                        <div class="col-sm-12 col-md-4" style="border-left: 1px solid #cccccc;border-right: 1px solid #cccccc">
+                            Unprotected
+                        </div>
+                        <div class="col-sm-12 col-md-4">
+                            Errors
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    Alerts | All
+                </div>
+                <div class="card-block">
+                    <div class="card-text">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th class="left">Name</th>
+                                    <th class="left">Weakness</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td class="left">Frankenstein</td>
+                                    <td class="left">Fire</td>
+                                </tr>
+                                <tr>
+                                    <td class="left">Dracula</td>
+                                    <td class="left">Garlic</td>
+                                </tr>
+                                <tr>
+                                    <td class="left">Wolfman</td>
+                                    <td class="left">Squirrels</td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
     </div>
-</clr-modal> -->
 
-<full-screen-modal [(opened)]="opened">
-    <clr-wizard #wizard [(clrWizardOpen)]="opened" style="height: 100%;" [clrWizardSize]="'xl'" [clrWizardForceForwardNavigation]="true" class="clr-wizard--inline clr-wizard--no-shadow clr-wizard--no-title"
-                [clrWizardPreventModalAnimation]="true">
-                <clr-wizard-title>Jump-To Wizard</clr-wizard-title>
-
-                <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>
-                <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
-                <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
-                <clr-wizard-button [type]="'finish'">Done</clr-wizard-button>
-
-                <clr-wizard-page>
-                    <ng-template clrPageTitle></ng-template>
-                    ...1
-                </clr-wizard-page>
-
-                <clr-wizard-page>
-                    <ng-template clrPageTitle>Page 2</ng-template>
-                    ...2
-                </clr-wizard-page>
-
-                <clr-wizard-page #pageThree>
-                    <ng-template clrPageTitle>Page 3</ng-template>
-                    ...3
-                </clr-wizard-page>
-
-                <clr-wizard-page>
-                    <ng-template clrPageTitle>Page 4</ng-template>
-                    ...4
-                </clr-wizard-page>
-
-                <clr-wizard-page #pageFive>
-                    <ng-template clrPageTitle>Page 5</ng-template>
-                    ...5
-                </clr-wizard-page>
-            </clr-wizard>
-</full-screen-modal>
+    <div class="row">
+        <div class="col-sm-12 col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    Capacity | Overview
+                </div>
+                <div class="card-block">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-4">
+                            Used
+                        </div>
+                        <div class="col-sm-12 col-md-8" style="border-left: 1px solid #cccccc;">
+                            <table class="table">
+                                <thead>
+                                    <tr>
+                                        <th>Decimal</th>
+                                        <th>Hexadecimal</th>
+                                        <th>Binary</th>
+                                        <th>Roman Numeral</th>
+                                    </tr>
+                                </thead>
+                                <tbody>
+                                    <tr>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>1</td>
+                                        <td>I</td>
+                                    </tr>
+                                    <tr>
+                                        <td>5</td>
+                                        <td>5</td>
+                                        <td>101</td>
+                                        <td>V</td>
+                                    </tr>
+                                    <tr>
+                                        <td>10</td>
+                                        <td>A</td>
+                                        <td>1010</td>
+                                        <td>X</td>
+                                    </tr>
+                                    <tr>
+                                        <td>15</td>
+                                        <td>F</td>
+                                        <td>1111</td>
+                                        <td>XV</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    Jobs | Backup
+                </div>
+                <div class="card-block">
+                    <div class="card-text">
+                        ...
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
