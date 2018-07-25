@@ -1,3 +1,4 @@
+declare var require: any;
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { FormsModule } from '@angular/forms';
@@ -35,52 +36,52 @@ import { DashBoardComponent } from './layout/dashboard/dashboard.component';
 
 import { ChartModule } from "angular2-highcharts";
 @NgModule({
-  imports: [
-    BrowserModule,
-    FormsModule,
-    CommonModule,
-    BrowserAnimationsModule,
-    ClarityModule,
-    CoreModule,
-    SharedModule,
-    NavModule,
-    // import HttpClientModule after BrowserModule.
-    HttpClientModule,
-    HttpClientXsrfModule.withOptions({
-      cookieName: 'My-Xsrf-Cookie',
-      headerName: 'My-Xsrf-Header',
-    }),
+    imports: [
+        BrowserModule,
+        FormsModule,
+        CommonModule,
+        BrowserAnimationsModule,
+        ClarityModule,
+        CoreModule,
+        SharedModule,
+        NavModule,
+        // import HttpClientModule after BrowserModule.
+        HttpClientModule,
+        HttpClientXsrfModule.withOptions({
+            cookieName: 'My-Xsrf-Cookie',
+            headerName: 'My-Xsrf-Header',
+        }),
 
-    // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
-    // and returns simulated server responses.
-    // Remove it when a real server is ready to receive requests.
-    HttpClientInMemoryWebApiModule.forRoot(
-      InMemoryDataService, {
-        dataEncapsulation: false,
-        passThruUnknownUrl: true,
-        put204: false // return entity after PUT/update
-      }
-    ),
-    ROUTING,
-    ChartModule.forRoot(require('highcharts'))
-  ],
-  declarations: [
-    AppComponent,
-    ConfigComponent,
-    DownloaderComponent,
-    HeroesComponent,
-    MessagesComponent,
-    UploaderComponent,
-    PackageSearchComponent,
-    DashBoardComponent,
-  ],
-  providers: [
-    AuthService,
-    HttpErrorHandler,
-    MessageService,
-    { provide: RequestCache, useClass: RequestCacheWithMap },
-    httpInterceptorProviders
-  ],
-  bootstrap: [AppComponent]
+        // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
+        // and returns simulated server responses.
+        // Remove it when a real server is ready to receive requests.
+        HttpClientInMemoryWebApiModule.forRoot(
+            InMemoryDataService, {
+                dataEncapsulation: false,
+                passThruUnknownUrl: true,
+                put204: false // return entity after PUT/update
+            }
+        ),
+        ROUTING,
+        ChartModule.forRoot(require('highcharts'))
+    ],
+    declarations: [
+        AppComponent,
+        ConfigComponent,
+        DownloaderComponent,
+        HeroesComponent,
+        MessagesComponent,
+        UploaderComponent,
+        PackageSearchComponent,
+        DashBoardComponent,
+    ],
+    providers: [
+        AuthService,
+        HttpErrorHandler,
+        MessageService,
+        { provide: RequestCache, useClass: RequestCacheWithMap },
+        httpInterceptorProviders
+    ],
+    bootstrap: [AppComponent]
 })
 export class AppModule { }

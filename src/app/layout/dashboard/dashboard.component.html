@@ -8,24 +8,30 @@
                 <div class="card-block assets-min-height" [ngStyle]="{'height': alertBlock.clientHeight + 'px'}">
                     <div class="row">
                         <div class="col-sm-12 col-md-4 auto-center">
-                            <div class="dashboard-header-item-inner">
-                                <span class="dashboard-header-item-text">365</span>
-                                <h4>Discovered</h4>
-                                <p class="p1">Assets</p>
+                            <div class="dashboard-widget">
+                                <div class="widget-left-item">365</div>
+                                <div class="widget-right-item">
+                                    <div>Discovered</div>
+                                    <p>Assets</p>
+                                </div>
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-4 split-line auto-center">
-                            <div class="dashboard-header-item-inner">
-                                <span class="dashboard-header-item-text is-warning">10</span>
-                                <h4>Unprotected</h4>
-                                <p class="p1">Assets</p>
+                            <div class="dashboard-widget">
+                                <div class="widget-left-item is-warning">10</div>
+                                <div class="widget-right-item">
+                                    <div>Unprotected</div>
+                                    <p>Assets</p>
+                                </div>
                             </div>
                         </div>
                         <div class="col-sm-12 col-md-4 split-line auto-center">
-                            <div class="dashboard-header-item-inner">
-                                <span class="dashboard-header-item-text is-error">101</span>
-                                <h4>Failed</h4>
-                                <p class="p1">Assets</p>
+                            <div class="dashboard-widget">
+                                <div class="widget-left-item is-error">101</div>
+                                <div class="widget-right-item">
+                                    <div>Failed</div>
+                                    <p>Assets</p>
+                                </div>
                             </div>
                         </div>
                     </div>
@@ -70,17 +76,21 @@
                         <div class="col-sm-12 col-md-4">
                             <div class="row">
                                 <div class="col-sm-12 auto-center">
-                                    <div class="dashboard-header-item-inner">
-                                        <span class="dashboard-header-item-text">2TB</span>
-                                        <h4>Storage</h4>
-                                        <p class="p1">Used</p>
+                                    <div class="dashboard-widget">
+                                        <div class="widget-left-item">2 TB</div>
+                                        <div class="widget-right-item">
+                                            <div>Storage</div>
+                                            <p>Used</p>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-12 auto-center split-line-top">
-                                    <div class="dashboard-header-item-inner">
-                                        <span class="dashboard-header-item-text">5GB</span>
-                                        <h4>Used</h4>
-                                        <p class="p1">In Last Week</p>
+                                    <div class="dashboard-widget">
+                                        <div class="widget-left-item">50 GB</div>
+                                        <div class="widget-right-item">
+                                            <div>Used</div>
+                                            <p>In Last Week</p>
+                                        </div>
                                     </div>
                                 </div>
                                 <div class="col-sm-12 auto-center split-line-top">
@@ -95,7 +105,7 @@
                                 <table class="table table-noborder">
                                     <thead>
                                         <tr>
-                                            <th>Location</th>
+                                            <th class="left">Location</th>
                                             <th>Storage Used</th>
                                             <th>% Full</th>
                                             <th>Space Left</th>
@@ -104,7 +114,7 @@
                                     </thead>
                                     <tbody>
                                         <tr>
-                                            <td>GSAN</td>
+                                            <td class="left">GSAN</td>
                                             <td>
                                                 <div class="progress-block">
                                                     <div class="progress-static error">
@@ -117,7 +127,7 @@
                                             <td>10 days</td>
                                         </tr>
                                         <tr>
-                                            <td>DD1</td>
+                                            <td class="left">DD1</td>
                                             <td>
                                                 <div class="progress-block">
                                                     <div class="progress-static danger">
@@ -130,7 +140,7 @@
                                             <td>300 days</td>
                                         </tr>
                                         <tr>
-                                            <td>DD2</td>
+                                            <td class="left">DD2</td>
                                             <td>
                                                 <div class="progress-block">
                                                     <div class="progress-static success">
@@ -167,7 +177,8 @@
         <div class="col-sm-12 col-md-4">
             <div class="card">
                 <div class="card-header">
-                    Alerts | All
+                    Alerts | All (Last 24 hours)
+                    <span class="card-header-right-text">View All</span>
                 </div>
                 <div class="card-block">
                     <div class="card-text">
@@ -177,26 +188,33 @@
                                     <div class="col-sm-4 auto-center">
                                         <div class="select">
                                             <select id="selects_1">
-                                                <option>1</option>
-                                                <option>2</option>
-                                                <option>3</option>
-                                                <option>4</option>
-                                                <option>50000000</option>
+                                                <option>All Alerts</option>
+                                                <option>Failed Alerts</option>
+                                                <option>Others</option>
                                             </select>
                                         </div>
                                     </div>
                                     <div class="col-sm-4 auto-center">
-                                        <div class="dashboard-header-item-inner">
-                                            <span class="dashboard-header-item-text is-warning">10</span>
-                                            <h4>Alerts</h4>
-                                            <p class="p1">Critcal</p>
+                                        <div class="dashboard-widget">
+                                            <div class="widget-left-item">
+                                                <clr-icon shape="times-circle" class="is-solid is-error" size="26"></clr-icon>
+                                                1024
+                                            </div>
+                                            <div class="widget-right-item">
+                                                <div>Alerts</div>
+                                                <p>Critcal</p>
+                                            </div>
                                         </div>
                                     </div>
                                     <div class="col-sm-4 auto-center">
-                                        <div class="dashboard-header-item-inner">
-                                            <span class="dashboard-header-item-text is-warning">10</span>
-                                            <h4>Alerts</h4>
-                                            <p class="p1">Warning</p>
+                                        <div class="dashboard-widget">
+                                            <div class="widget-left-item">
+                                                <clr-icon shape="warning-standard" class="is-solid  is-warning" size="26"></clr-icon>
+                                                27</div>
+                                            <div class="widget-right-item">
+                                                <div>Alerts</div>
+                                                <p>Warning</p>
+                                            </div>
                                         </div>
                                     </div>
                                 </div>
@@ -247,33 +265,33 @@
                         </thead>
                         <tbody>
                             <tr>
-                                <td>AIX File System</td>
+                                <td class="left">AIX File System</td>
                                 <td>32</td>
                                 <td>14931.17</td>
                             </tr>
                             <tr>
-                                <td>AIX File System</td>
+                                <td class="left">AIX File System</td>
                                 <td>32</td>
                                 <td>14931.17</td>
                             </tr>
                             <tr>
-                                <td>AIX File System</td>
+                                <td class="left">AIX File System</td>
                                 <td>32</td>
                                 <td>14931.17</td>
                             </tr>
                             <tr>
-                                <td>AIX File System</td>
+                                <td class="left">AIX File System</td>
                                 <td>32</td>
                                 <td>14931.17</td>
                             </tr>
                             <tr>
-                                <td>AIX File System</td>
+                                <td class="left">AIX File System</td>
                                 <td>32</td>
                                 <td>14931.17</td>
                             </tr>
 
                             <tr>
-                                <td style="border-top: 1px solid #e4e4e4; font-weight: bold">Total</td>
+                                <td style="border-top: 1px solid #e4e4e4; font-weight: bold" class="left">Total</td>
                                 <td style="border-top: 1px solid #e4e4e4; font-weight: bold">64</td>
                                 <td style="border-top: 1px solid #e4e4e4; font-weight: bold">29962.34</td>
                             </tr>

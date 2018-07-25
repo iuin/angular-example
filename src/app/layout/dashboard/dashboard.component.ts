@@ -1,4 +1,4 @@
-import { Component, OnInit, ViewChild, OnDestroy } from '@angular/core';
+import { Component, OnInit, ViewChild, OnDestroy, ElementRef } from '@angular/core';
 import { ClrWizard, ClrWizardPage } from "@clr/angular";
 
 @Component({
@@ -8,8 +8,9 @@ import { ClrWizard, ClrWizardPage } from "@clr/angular";
 })
 export class DashBoardComponent implements OnInit, OnDestroy {
 
-    private parent: HTMLElement;
+    replJobsOptions: Object;
     backupJobsOptions: Object;
+    private parent: HTMLElement;
     constructor(private element: ElementRef) { }
 
     ngOnInit(): void {
@@ -28,15 +29,12 @@ export class DashBoardComponent implements OnInit, OnDestroy {
                 showAxes: true,
                 type: "pie",
             },
+            legend: {
+                enabled: true
+            },
             colors: ['#007db8', '#F2255B', '#F7CE4D', '#6EA204'],
             credits: {
                 enabled: false,
-            },
-            legend: {
-                enabled: true,
-                itemStyle: {
-                    fontSize: "13px",
-                }
             },
             tooltip: {
                 pointFormat: '<b>{point.name}</b>: {point.percentage:.1f} %',
@@ -44,18 +42,15 @@ export class DashBoardComponent implements OnInit, OnDestroy {
             plotOptions: {
                 pie: {
                     allowPointSelect: true,
-                    center: ['50%', 110],
+                    center: ['50%', 105],
                     cursor: 'pointer',
-                    dataLabels: {
-                        enabled: true,
-                        y: 0
-                    },
-                    size: '50%',
+                    size: '80%',
+                    showInLegend: true
                 }
             },
             title: {
                 floating: true,
-                text: '361',
+                text: '163',
                 align: 'center',
                 verticalAlign: 'middle',
                 style: {
@@ -74,35 +69,35 @@ export class DashBoardComponent implements OnInit, OnDestroy {
             series: [{
                 name: 'Brands',
                 colorByPoint: true,
-                innerSize: '80%',
+                innerSize: '65%',
                 data: [{
-                    name: 'Complete (218)', y: 56.33,
+                    name: 'Complete', y: 56.33,
                     color: {
-                        linearGradient: { x1: 0.5, y1: 0, x2: 0, y2: 1 },
+                        radialGradient: { cx: 0.5, cy: 0.5, r: 1 },
                         stops: [
                             [0, '#00D0FF'],
                             [1, '#F2255B']
                         ]
                     }
                 }, {
-                    name: 'Failed (66)', y: 24.03, color: {
-                        linearGradient: { x1: 0, y1: 0.8, x2: 0, y2: 0 },
+                    name: 'Failed', y: 24.03, color: {
+                        radialGradient: { cx: 0.5, cy: 0.5, r: 1 },
                         stops: [
                             [0, '#F2255B'],
                             [1, '#F7CE4D']
                         ]
                     }
                 }, {
-                    name: 'Running (30)', y: 15.38, color: {
-                        linearGradient: { x1: 0, y1: 0.5, x2: 1, y2: 0 },
+                    name: 'Schduled', y: 15.38, color: {
+                        radialGradient: { cx: 0.5, cy: 0.5, r: 2 },
                         stops: [
                             [0, '#F7CE4D'],
                             [1, '#6EA204']
                         ]
                     }
                 }, {
-                    name: 'Schduled (45)', y: 10.5, color: {
-                        linearGradient: { x1: 0, y1: 0.5, x2: 1, y2: 0 },
+                    name: 'Running', y: 10.5, color: {
+                        radialGradient: { cx: 0.5, cy: 0.5, r: 1 },
                         stops: [
                             [0, '#6EA204'],
                             [1, '#00D0FF']

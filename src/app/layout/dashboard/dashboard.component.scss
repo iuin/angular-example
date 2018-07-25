@@ -1,19 +1,27 @@
 section {
     padding: 0 24px;
 }
+
 .row {
     height: 100%;
 }
+
 .split-line-top {
     border-top: 1px solid #e4e4e4;
 }
+
 .table {
     margin-top: 0px;
+}
+
+.card-header {
+    font-weight: bold;
 }
 
 .progress-static.error>.progress-meter:before {
     background-color: #CE1126;
 }
+
 @media screen and (min-width: 768px) {
     .split-line {
         border-left: 1px solid #e4e4e4;
@@ -31,32 +39,67 @@ section {
         min-height: 300px;
     }
 }
+
 .auto-center {
     justify-content: center;
     align-items: center;
     display: flex;
     display: -webkit-flex;
 }
-.link{
+
+.link {
     text-decoration: none;
     color: #007db8;
     cursor: pointer;
 }
 
-.dashboard-header-item-inner{
+.dashboard-header-item-inner {
     display: block;
     position: relative;
     padding-left: 72px;
+    .is-success {
+        color: #318700;
+    }
+    .is-error {
+        color: #CE1126;
+    }
+    .is-warning {
+        color: #F2AF00;
+    }
+}
 
-    .dashboard-header-item-text{
+.dashboard-widget {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    .widget-left-item {
+        min-width: 50px;
+        min-height: 50px;
+        justify-content: center;
+        align-items: center;
+        display: flex;
+        display: -webkit-flex;
         font-size: 32px;
         font-weight: bold;
         color: #007db8;
-        position: absolute;
-        top: 50%;
-        transform: translateY(-50%);
-        left: 0px;
         cursor: pointer;
+        margin-right: 6px;
+    }
+    .widget-right-item {
+        min-width: 50px;
+        min-height: 50px;
+        &>div {
+            margin: 0;
+            color: #888888;
+            font-size: 12px;
+        }
+        &>p {
+            font-size: 16px;
+            margin: 0;
+            margin-top: -4px;
+            color: #007db8;
+            font-weight: bold;
+        }
     }
     .is-success {
         color: #318700;
@@ -67,17 +110,11 @@ section {
     .is-warning {
         color: #F2AF00;
     }
-    h4{
-        margin: 0;
-        color: #888888;
-        font-size: 12px;
-    }
+}
 
-    p{
-        font-size: 16px;
-        margin: 0;
-        margin-top: -4px;
-        color: #007db8;
-        font-weight: bold;
-    }
+.card-header-right-text {
+    float: right;
+    cursor: pointer;
+    color: #007db8;
+    font-size: 16px;
 }
