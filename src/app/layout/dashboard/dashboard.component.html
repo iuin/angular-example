@@ -5,146 +5,39 @@
                 <div class="card-header">
                     Assets | Overview
                 </div>
-                <div class="card-block" [ngStyle]="{'height': alertBlock.clientHeight + 'px'}">
+                <div class="card-block assets-min-height" [ngStyle]="{'height': alertBlock.clientHeight + 'px'}">
                     <div class="row">
-                        <div class="col-sm-12 col-md-4">
-                            Assets
+                        <div class="col-sm-12 col-md-4 auto-center">
+                            <div class="dashboard-header-item-inner">
+                                <span class="dashboard-header-item-text">365</span>
+                                <h4>Discovered</h4>
+                                <p class="p1">Assets</p>
+                            </div>
                         </div>
-                        <div class="col-sm-12 col-md-4 split-line">
-                            Unprotected
+                        <div class="col-sm-12 col-md-4 split-line auto-center">
+                            <div class="dashboard-header-item-inner">
+                                <span class="dashboard-header-item-text is-warning">10</span>
+                                <h4>Unprotected</h4>
+                                <p class="p1">Assets</p>
+                            </div>
                         </div>
-                        <div class="col-sm-12 col-md-4 split-line">
-                            Errors
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-4">
-            <div class="card">
-                <div class="card-header">
-                    Alerts | All
-                </div>
-                <div class="card-block" #alertBlock>
-                    <div class="card-text">
-                        <table class="table table-noborder">
-                            <thead>
-                                <tr>
-                                    <th class="left">Job</th>
-                                    <th class="left">Date</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td class="left">
-                                        <a class="link">Backup job failed</a>
-                                    </td>
-                                    <td class="left">25/07/2018</td>
-                                </tr>
-                                <tr>
-                                    <td class="left">
-                                        <a class="link">Backup job failed</a>
-                                    </td>
-                                    <td class="left">26/07/2018</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-12 col-md-8">
-            <div class="card">
-                <div class="card-header">
-                    Capacity | Overview
-                </div>
-                <div class="card-block" #capacityBlock>
-                    <div class="row">
-                        <div class="col-sm-12 col-md-4">
-                            Used
-                        </div>
-                        <div class="col-sm-12 col-md-8 split-line">
-                            <table class="table table-noborder">
-                                <thead>
-                                    <tr>
-                                        <th>Location</th>
-                                        <th>Storage Used</th>
-                                        <th>% Full</th>
-                                        <th>Space Left</th>
-                                        <th>Days Until Full</th>
-                                    </tr>
-                                </thead>
-                                <tbody>
-                                    <tr>
-                                        <td>GSAN</td>
-                                        <td>
-                                            <div class="progress-block">
-                                                <div class="progress-static">
-                                                    <div class="progress-meter" data-value="80"></div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>80%</td>
-                                        <td>100 GB</td>
-                                        <td>10 days</td>
-                                    </tr>
-                                    <tr>
-                                        <td>DD1</td>
-                                        <td>
-                                            <div class="progress-block">
-                                                <div class="progress-static danger">
-                                                    <div class="progress-meter" data-value="50"></div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>50%</td>
-                                        <td>50 TB</td>
-                                        <td>300 days</td>
-                                    </tr>
-                                    <tr>
-                                        <td>DD2</td>
-                                        <td>
-                                            <div class="progress-block">
-                                                <div class="progress-static success">
-                                                    <div class="progress-meter" data-value="5"></div>
-                                                </div>
-                                            </div>
-                                        </td>
-                                        <td>5%</td>
-                                        <td>95 TB</td>
-                                        <td>210 days</td>
-                                    </tr>
-                                </tbody>
-                            </table>
+                        <div class="col-sm-12 col-md-4 split-line auto-center">
+                            <div class="dashboard-header-item-inner">
+                                <span class="dashboard-header-item-text is-error">101</span>
+                                <h4>Failed</h4>
+                                <p class="p1">Assets</p>
+                            </div>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
-        <div class="col-sm-12 col-md-4">
-            <div class="card">
-                <div class="card-header">
-                    Jobs | Backup
-                </div>
-                <div class="card-block" [ngStyle]="{ height: capacityBlock.clientHeight + 'px'}">
-                    <div class="card-text">
-                        ...
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
         <div class="col-sm-12 col-md-4">
             <div class="card">
                 <div class="card-header">
                     Quick Tasks
                 </div>
-                <div class="card-block">
+                <div class="card-block" #alertBlock>
                     <div class="card-text">
                         <ul class="list-unstyled">
                             <li>
@@ -164,41 +57,228 @@
                 </div>
             </div>
         </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 col-md-8">
+            <div class="card">
+                <div class="card-header">
+                    Capacity | Overview
+                </div>
+                <div class="card-block capacity-min-height" [ngStyle]="{'height': jobsPieBlock.clientHeight + 'px'}">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-4">
+                            <div class="row">
+                                <div class="col-sm-12 auto-center">
+                                    <div class="dashboard-header-item-inner">
+                                        <span class="dashboard-header-item-text">2TB</span>
+                                        <h4>Storage</h4>
+                                        <p class="p1">Used</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 auto-center split-line-top">
+                                    <div class="dashboard-header-item-inner">
+                                        <span class="dashboard-header-item-text">5GB</span>
+                                        <h4>Used</h4>
+                                        <p class="p1">In Last Week</p>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 auto-center split-line-top">
+                                    <div>
+                                        <span>Days Until Full: 3650 Days</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-8 split-line">
+                            <div class="card-text">
+                                <table class="table table-noborder">
+                                    <thead>
+                                        <tr>
+                                            <th>Location</th>
+                                            <th>Storage Used</th>
+                                            <th>% Full</th>
+                                            <th>Space Left</th>
+                                            <th>Days Until Full</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td>GSAN</td>
+                                            <td>
+                                                <div class="progress-block">
+                                                    <div class="progress-static error">
+                                                        <div class="progress-meter" data-value="80"></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>80%</td>
+                                            <td>100 GB</td>
+                                            <td>10 days</td>
+                                        </tr>
+                                        <tr>
+                                            <td>DD1</td>
+                                            <td>
+                                                <div class="progress-block">
+                                                    <div class="progress-static danger">
+                                                        <div class="progress-meter" data-value="50"></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>50%</td>
+                                            <td>50 TB</td>
+                                            <td>300 days</td>
+                                        </tr>
+                                        <tr>
+                                            <td>DD2</td>
+                                            <td>
+                                                <div class="progress-block">
+                                                    <div class="progress-static success">
+                                                        <div class="progress-meter" data-value="5"></div>
+                                                    </div>
+                                                </div>
+                                            </td>
+                                            <td>5%</td>
+                                            <td>95 TB</td>
+                                            <td>210 days</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-sm-12 col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    Jobs | Backup
+                </div>
+                <div class="card-block" #jobsPieBlock>
+                    <chart [options]="backupJobsOptions" style="display: block;height: auto; width: auto"></chart>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <div class="row">
+        <div class="col-sm-12 col-md-4">
+            <div class="card">
+                <div class="card-header">
+                    Alerts | All
+                </div>
+                <div class="card-block">
+                    <div class="card-text">
+                        <div class="row">
+                            <div class="col-sm-12">
+                                <div class="row">
+                                    <div class="col-sm-4 auto-center">
+                                        <div class="select">
+                                            <select id="selects_1">
+                                                <option>1</option>
+                                                <option>2</option>
+                                                <option>3</option>
+                                                <option>4</option>
+                                                <option>50000000</option>
+                                            </select>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 auto-center">
+                                        <div class="dashboard-header-item-inner">
+                                            <span class="dashboard-header-item-text is-warning">10</span>
+                                            <h4>Alerts</h4>
+                                            <p class="p1">Critcal</p>
+                                        </div>
+                                    </div>
+                                    <div class="col-sm-4 auto-center">
+                                        <div class="dashboard-header-item-inner">
+                                            <span class="dashboard-header-item-text is-warning">10</span>
+                                            <h4>Alerts</h4>
+                                            <p class="p1">Warning</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div class="col-sm-12">
+                                <table class="table table-noborder">
+                                    <thead>
+                                        <tr>
+                                            <th class="left">Job</th>
+                                            <th class="left">Date</th>
+                                        </tr>
+                                    </thead>
+                                    <tbody>
+                                        <tr>
+                                            <td class="left">
+                                                <a class="link">Backup job failed</a>
+                                            </td>
+                                            <td class="left">25/07/2018</td>
+                                        </tr>
+                                        <tr>
+                                            <td class="left">
+                                                <a class="link">Backup job failed</a>
+                                            </td>
+                                            <td class="left">26/07/2018</td>
+                                        </tr>
+                                    </tbody>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
         <div class="col-sm-12 col-md-4">
             <div class="card">
                 <div class="card-header">
                     Client | Information
                 </div>
-                <div class="card-block">
-                    <div class="card-text">
-                        <table class="table table-noborder">
-                            <thead>
-                                <tr>
-                                    <th class="left">Plugin Type</th>
-                                    <th>Plugin Count</th>
-                                    <th>Protected GB</th>
-                                </tr>
-                            </thead>
-                            <tbody>
-                                <tr>
-                                    <td>AIX File System</td>
-                                    <td>32</td>
-                                    <td>14931.17</td>
-                                </tr>
-                                <tr>
-                                    <td>AIX File System</td>
-                                    <td>32</td>
-                                    <td>14931.17</td>
-                                </tr>
+                <div class="card-block" style="max-height: 350px;overflow-y: auto;">
+                    <table class="table table-noborder">
+                        <thead>
+                            <tr>
+                                <th class="left">Plugin Type</th>
+                                <th>Plugin Count</th>
+                                <th>Protected GB</th>
+                            </tr>
+                        </thead>
+                        <tbody>
+                            <tr>
+                                <td>AIX File System</td>
+                                <td>32</td>
+                                <td>14931.17</td>
+                            </tr>
+                            <tr>
+                                <td>AIX File System</td>
+                                <td>32</td>
+                                <td>14931.17</td>
+                            </tr>
+                            <tr>
+                                <td>AIX File System</td>
+                                <td>32</td>
+                                <td>14931.17</td>
+                            </tr>
+                            <tr>
+                                <td>AIX File System</td>
+                                <td>32</td>
+                                <td>14931.17</td>
+                            </tr>
+                            <tr>
+                                <td>AIX File System</td>
+                                <td>32</td>
+                                <td>14931.17</td>
+                            </tr>
 
-                                <tr>
-                                    <td style="border-top: 1px solid #e4e4e4; font-weight: bold">Total</td>
-                                    <td style="border-top: 1px solid #e4e4e4; font-weight: bold">64</td>
-                                    <td style="border-top: 1px solid #e4e4e4; font-weight: bold">29962.34</td>
-                                </tr>
-                            </tbody>
-                        </table>
-                    </div>
+                            <tr>
+                                <td style="border-top: 1px solid #e4e4e4; font-weight: bold">Total</td>
+                                <td style="border-top: 1px solid #e4e4e4; font-weight: bold">64</td>
+                                <td style="border-top: 1px solid #e4e4e4; font-weight: bold">29962.34</td>
+                            </tr>
+                        </tbody>
+                    </table>
                 </div>
             </div>
         </div>
@@ -209,7 +289,7 @@
                 </div>
                 <div class="card-block">
                     <div class="card-text">
-                        ...
+                        <chart [options]="backupJobsOptions" style="display: block;height: auto; width: auto"></chart>
                     </div>
                 </div>
             </div>

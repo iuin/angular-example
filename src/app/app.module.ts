@@ -32,6 +32,8 @@ import { SharedModule } from './shared/shared.module';
 import { NavModule } from './layout/nav/nav.module';
 import { ROUTING } from "./app.routing";
 import { DashBoardComponent } from './layout/dashboard/dashboard.component';
+
+import { ChartModule } from "angular2-highcharts";
 @NgModule({
   imports: [
     BrowserModule,
@@ -59,7 +61,8 @@ import { DashBoardComponent } from './layout/dashboard/dashboard.component';
         put204: false // return entity after PUT/update
       }
     ),
-    ROUTING
+    ROUTING,
+    ChartModule.forRoot(require('highcharts'))
   ],
   declarations: [
     AppComponent,
