@@ -1,316 +1,351 @@
 <section>
     <div class="row">
-        <div class="col-sm-12 col-md-8">
-            <div class="card">
-                <div class="card-header">
-                    Assets | Overview
-                </div>
-                <div class="card-block assets-min-height" [ngStyle]="{'height': alertBlock.clientHeight + 'px'}">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-4 auto-center">
-                            <div class="dashboard-widget">
-                                <div class="widget-left-item">365</div>
-                                <div class="widget-right-item">
-                                    <div>Discovered</div>
-                                    <p>Assets</p>
-                                </div>
-                            </div>
+        <div class="col-md-8">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            Assets | Overview
                         </div>
-                        <div class="col-sm-12 col-md-4 split-line auto-center">
-                            <div class="dashboard-widget">
-                                <div class="widget-left-item is-warning">10</div>
-                                <div class="widget-right-item">
-                                    <div>Unprotected</div>
-                                    <p>Assets</p>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-sm-12 col-md-4 split-line auto-center">
-                            <div class="dashboard-widget">
-                                <div class="widget-left-item is-error">101</div>
-                                <div class="widget-right-item">
-                                    <div>Failed</div>
-                                    <p>Assets</p>
-                                </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-4">
-            <div class="card">
-                <div class="card-header">
-                    Quick Tasks
-                </div>
-                <div class="card-block" #alertBlock>
-                    <div class="card-text">
-                        <ul class="list-unstyled">
-                            <li>
-                                <a class="link">Start backup</a>
-                            </li>
-                            <li>
-                                <a class="link">Create Data Domain</a>
-                            </li>
-                            <li>
-                                <a class="link">Create new backup policy</a>
-                            </li>
-                            <li>
-                                <a class="link">Create replication destination</a>
-                            </li>
-                        </ul>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-12 col-md-8">
-            <div class="card">
-                <div class="card-header">
-                    Capacity | Overview
-                </div>
-                <div class="card-block capacity-min-height" [ngStyle]="{'height': jobsPieBlock.clientHeight + 'px'}">
-                    <div class="row">
-                        <div class="col-sm-12 col-md-4">
+                        <div class="card-block assets-min-height">
                             <div class="row">
-                                <div class="col-sm-12 auto-center">
+                                <div class="col-sm-12 col-md-4 auto-center">
                                     <div class="dashboard-widget">
-                                        <div class="widget-left-item">2 TB</div>
+                                        <div class="widget-left-item">365</div>
                                         <div class="widget-right-item">
-                                            <div>Storage</div>
-                                            <p>Used</p>
+                                            <div>Discovered</div>
+                                            <p>Assets</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-12 auto-center split-line-top">
+                                <div class="col-sm-12 col-md-4 split-line auto-center">
                                     <div class="dashboard-widget">
-                                        <div class="widget-left-item">50 GB</div>
+                                        <div class="widget-left-item is-warning">10</div>
                                         <div class="widget-right-item">
-                                            <div>Used</div>
-                                            <p>In Last Week</p>
+                                            <div>Unprotected</div>
+                                            <p>Assets</p>
                                         </div>
                                     </div>
                                 </div>
-                                <div class="col-sm-12 auto-center split-line-top">
-                                    <div>
-                                        <span>Days Until Full: 3650 Days</span>
+                                <div class="col-sm-12 col-md-4 split-line auto-center">
+                                    <div class="dashboard-widget">
+                                        <div class="widget-left-item is-error">101</div>
+                                        <div class="widget-right-item">
+                                            <div>Failed</div>
+                                            <p>Assets</p>
+                                        </div>
                                     </div>
                                 </div>
                             </div>
                         </div>
-                        <div class="col-sm-12 col-md-8 split-line">
+                    </div>
+                </div>
+
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            Capacity | Overview
+                        </div>
+                        <div class="card-block">
+                            <div class="row">
+                                <div class="col-sm-12 col-md-4">
+                                    <div class="row" [ngStyle]="{'height': capacityBlock.clientHeight <= 140 ? '140px' : capacityBlock.clientHeight+'px'}">
+                                        <div class="col-sm-12 auto-center">
+                                            <div class="dashboard-widget">
+                                                <div class="widget-left-item">2 TB</div>
+                                                <div class="widget-right-item">
+                                                    <div>Storage</div>
+                                                    <p>Used</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                        <div class="col-sm-12 auto-center split-line-top">
+                                            <div class="dashboard-widget">
+                                                <div class="widget-left-item">50 GB</div>
+                                                <div class="widget-right-item">
+                                                    <div>Used</div>
+                                                    <p>In Last Week</p>
+                                                </div>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                                <div class="col-sm-12 col-md-8 split-line" #capacityBlock>
+                                    <div class="card-text">
+                                        <table class="table table-noborder">
+                                            <thead>
+                                                <tr>
+                                                    <th class="left">Location</th>
+                                                    <th>Storage Used</th>
+                                                    <th>% Full</th>
+                                                    <th>Space Left</th>
+                                                </tr>
+                                            </thead>
+                                            <tbody>
+                                                <tr>
+                                                    <td class="left">GSAN</td>
+                                                    <td>
+                                                        <div class="progress-block">
+                                                            <div class="progress-static error">
+                                                                <div class="progress-meter" data-value="80"></div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>80%</td>
+                                                    <td>100 GB</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left">DD1</td>
+                                                    <td>
+                                                        <div class="progress-block">
+                                                            <div class="progress-static danger">
+                                                                <div class="progress-meter" [attr.data-value]="val"></div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>50%</td>
+                                                    <td>{{val}} TB</td>
+                                                </tr>
+                                                <tr>
+                                                    <td class="left">DD2</td>
+                                                    <td>
+                                                        <div class="progress-block">
+                                                            <div class="progress-static success">
+                                                                <div class="progress-meter" data-value="5"></div>
+                                                            </div>
+                                                        </div>
+                                                    </td>
+                                                    <td>5%</td>
+                                                    <td>95 TB</td>
+                                                </tr>
+                                            </tbody>
+                                        </table>
+                                    </div>
+
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12">
+                    <div class="row">
+                        <div class="col-sm-12 col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    Alerts | All (Last 24 hours)
+                                    <span class="card-header-right-text">View All</span>
+                                </div>
+                                <div class="card-block">
+                                    <div class="card-text">
+                                        <div class="row">
+                                            <div class="col-sm-12">
+                                                <div class="row">
+                                                    <div class="col-sm-4 auto-left">
+                                                        <div class="select">
+                                                            <select id="selects_1">
+                                                                <option>All Alerts</option>
+                                                                <option>Failed Alerts</option>
+                                                                <option>Others</option>
+                                                            </select>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4 auto-center">
+                                                        <div class="dashboard-widget">
+                                                            <div class="widget-left-item">
+                                                                <clr-icon shape="times-circle" class="is-solid is-error" size="26"></clr-icon>
+                                                                1024
+                                                            </div>
+                                                            <div class="widget-right-item">
+                                                                <div>Alerts</div>
+                                                                <p>Critcal</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                    <div class="col-sm-4 auto-center">
+                                                        <div class="dashboard-widget">
+                                                            <div class="widget-left-item">
+                                                                <clr-icon shape="warning-standard" class="is-solid  is-warning" size="26"></clr-icon>
+                                                                27</div>
+                                                            <div class="widget-right-item">
+                                                                <div>Alerts</div>
+                                                                <p>Warning</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                            <div class="col-sm-12">
+                                                <table class="table table-noborder">
+                                                    <thead>
+                                                        <tr>
+                                                            <th class="left">Job</th>
+                                                            <th class="left">Date</th>
+                                                        </tr>
+                                                    </thead>
+                                                    <tbody>
+                                                        <tr>
+                                                            <td class="left">
+                                                                <a class="link">Backup job failed</a>
+                                                            </td>
+                                                            <td class="left">25/07/2018</td>
+                                                        </tr>
+                                                        <tr>
+                                                            <td class="left">
+                                                                <a class="link">Backup job failed</a>
+                                                            </td>
+                                                            <td class="left">26/07/2018</td>
+                                                        </tr>
+                                                    </tbody>
+                                                </table>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-sm-12 col-md-6">
+                            <div class="card">
+                                <div class="card-header">
+                                    Client | Information
+                                </div>
+                                <div class="card-block" style="max-height: 350px;overflow-y: auto;">
+                                    <table class="table table-noborder">
+                                        <thead>
+                                            <tr>
+                                                <th class="left">Plugin Type</th>
+                                                <th>Plugin Count</th>
+                                                <th>Protected GB</th>
+                                            </tr>
+                                        </thead>
+                                        <tbody>
+                                            <tr>
+                                                <td class="left">AIX File System</td>
+                                                <td>32</td>
+                                                <td>14931.17</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left">AIX File System</td>
+                                                <td>32</td>
+                                                <td>14931.17</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left">AIX File System</td>
+                                                <td>32</td>
+                                                <td>14931.17</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left">AIX File System</td>
+                                                <td>32</td>
+                                                <td>14931.17</td>
+                                            </tr>
+                                            <tr>
+                                                <td class="left">AIX File System</td>
+                                                <td>32</td>
+                                                <td>14931.17</td>
+                                            </tr>
+
+                                            <tr>
+                                                <td style="border-top: 1px solid #e4e4e4; font-weight: bold" class="left">Total</td>
+                                                <td style="border-top: 1px solid #e4e4e4; font-weight: bold">64</td>
+                                                <td style="border-top: 1px solid #e4e4e4; font-weight: bold">29962.34</td>
+                                            </tr>
+                                        </tbody>
+                                    </table>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-4">
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            Quick Tasks
+                        </div>
+                        <div class="card-block">
                             <div class="card-text">
-                                <table class="table table-noborder">
-                                    <thead>
-                                        <tr>
-                                            <th class="left">Location</th>
-                                            <th>Storage Used</th>
-                                            <th>% Full</th>
-                                            <th>Space Left</th>
-                                            <th>Days Until Full</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="left">GSAN</td>
-                                            <td>
-                                                <div class="progress-block">
-                                                    <div class="progress-static error">
-                                                        <div class="progress-meter" data-value="80"></div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>80%</td>
-                                            <td>100 GB</td>
-                                            <td>10 days</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="left">DD1</td>
-                                            <td>
-                                                <div class="progress-block">
-                                                    <div class="progress-static danger">
-                                                        <div class="progress-meter" data-value="50"></div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>50%</td>
-                                            <td>50 TB</td>
-                                            <td>300 days</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="left">DD2</td>
-                                            <td>
-                                                <div class="progress-block">
-                                                    <div class="progress-static success">
-                                                        <div class="progress-meter" data-value="5"></div>
-                                                    </div>
-                                                </div>
-                                            </td>
-                                            <td>5%</td>
-                                            <td>95 TB</td>
-                                            <td>210 days</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
-                            </div>
-
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-4">
-            <div class="card">
-                <div class="card-header">
-                    Jobs | Backup
-                </div>
-                <div class="card-block" #jobsPieBlock>
-                    <chart [options]="backupJobsOptions" style="display: block;height: auto; width: auto"></chart>
-                </div>
-            </div>
-        </div>
-    </div>
-
-    <div class="row">
-        <div class="col-sm-12 col-md-4">
-            <div class="card">
-                <div class="card-header">
-                    Alerts | All (Last 24 hours)
-                    <span class="card-header-right-text">View All</span>
-                </div>
-                <div class="card-block">
-                    <div class="card-text">
-                        <div class="row">
-                            <div class="col-sm-12">
-                                <div class="row">
-                                    <div class="col-sm-4 auto-center">
-                                        <div class="select">
-                                            <select id="selects_1">
-                                                <option>All Alerts</option>
-                                                <option>Failed Alerts</option>
-                                                <option>Others</option>
-                                            </select>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4 auto-center">
-                                        <div class="dashboard-widget">
-                                            <div class="widget-left-item">
-                                                <clr-icon shape="times-circle" class="is-solid is-error" size="26"></clr-icon>
-                                                1024
-                                            </div>
-                                            <div class="widget-right-item">
-                                                <div>Alerts</div>
-                                                <p>Critcal</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col-sm-4 auto-center">
-                                        <div class="dashboard-widget">
-                                            <div class="widget-left-item">
-                                                <clr-icon shape="warning-standard" class="is-solid  is-warning" size="26"></clr-icon>
-                                                27</div>
-                                            <div class="widget-right-item">
-                                                <div>Alerts</div>
-                                                <p>Warning</p>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                            </div>
-                            <div class="col-sm-12">
-                                <table class="table table-noborder">
-                                    <thead>
-                                        <tr>
-                                            <th class="left">Job</th>
-                                            <th class="left">Date</th>
-                                        </tr>
-                                    </thead>
-                                    <tbody>
-                                        <tr>
-                                            <td class="left">
-                                                <a class="link">Backup job failed</a>
-                                            </td>
-                                            <td class="left">25/07/2018</td>
-                                        </tr>
-                                        <tr>
-                                            <td class="left">
-                                                <a class="link">Backup job failed</a>
-                                            </td>
-                                            <td class="left">26/07/2018</td>
-                                        </tr>
-                                    </tbody>
-                                </table>
+                                <ul class="list-unstyled">
+                                    <li>
+                                        <a class="link" (click)="opened = true;">Start backup</a>
+                                    </li>
+                                    <li>
+                                        <a class="link">Create Data Domain</a>
+                                    </li>
+                                    <li>
+                                        <a class="link">Create new backup policy</a>
+                                    </li>
+                                    <li>
+                                        <a class="link">Create replication destination</a>
+                                    </li>
+                                </ul>
                             </div>
                         </div>
                     </div>
                 </div>
-            </div>
 
-        </div>
-        <div class="col-sm-12 col-md-4">
-            <div class="card">
-                <div class="card-header">
-                    Client | Information
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            Jobs | Backup
+                        </div>
+                        <div class="card-block">
+                            <chart [options]="backupJobsOptions" style="display: block;height: auto; width: auto"></chart>
+                        </div>
+                    </div>
                 </div>
-                <div class="card-block" style="max-height: 350px;overflow-y: auto;">
-                    <table class="table table-noborder">
-                        <thead>
-                            <tr>
-                                <th class="left">Plugin Type</th>
-                                <th>Plugin Count</th>
-                                <th>Protected GB</th>
-                            </tr>
-                        </thead>
-                        <tbody>
-                            <tr>
-                                <td class="left">AIX File System</td>
-                                <td>32</td>
-                                <td>14931.17</td>
-                            </tr>
-                            <tr>
-                                <td class="left">AIX File System</td>
-                                <td>32</td>
-                                <td>14931.17</td>
-                            </tr>
-                            <tr>
-                                <td class="left">AIX File System</td>
-                                <td>32</td>
-                                <td>14931.17</td>
-                            </tr>
-                            <tr>
-                                <td class="left">AIX File System</td>
-                                <td>32</td>
-                                <td>14931.17</td>
-                            </tr>
-                            <tr>
-                                <td class="left">AIX File System</td>
-                                <td>32</td>
-                                <td>14931.17</td>
-                            </tr>
-
-                            <tr>
-                                <td style="border-top: 1px solid #e4e4e4; font-weight: bold" class="left">Total</td>
-                                <td style="border-top: 1px solid #e4e4e4; font-weight: bold">64</td>
-                                <td style="border-top: 1px solid #e4e4e4; font-weight: bold">29962.34</td>
-                            </tr>
-                        </tbody>
-                    </table>
-                </div>
-            </div>
-        </div>
-        <div class="col-sm-12 col-md-4">
-            <div class="card">
-                <div class="card-header">
-                    Jobs | Replication
-                </div>
-                <div class="card-block">
-                    <div class="card-text">
-                        <chart [options]="backupJobsOptions" style="display: block;height: auto; width: auto"></chart>
+                <div class="col-md-12">
+                    <div class="card">
+                        <div class="card-header">
+                            Jobs | Replication
+                        </div>
+                        <div class="card-block">
+                            <div class="card-text">
+                                <chart [options]="backupJobsOptions" style="display: block;height: auto; width: auto"></chart>
+                            </div>
+                        </div>
                     </div>
                 </div>
             </div>
         </div>
     </div>
 </section>
+
+
+<clr-wizard fullScreenWizard #wizard [(clrWizardOpen)]="opened" style="height: 100%;" [clrWizardSize]="'xl'" [clrWizardForceForwardNavigation]="true"
+                [clrWizardPreventModalAnimation]="true">
+                <clr-wizard-title>Jump-To Wizard</clr-wizard-title>
+
+                <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>
+                <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
+                <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
+                <clr-wizard-button [type]="'finish'">Done</clr-wizard-button>
+
+                <clr-wizard-page>
+                    <ng-template clrPageTitle></ng-template>
+                    ...1
+                </clr-wizard-page>
+
+                <clr-wizard-page>
+                    <ng-template clrPageTitle>Page 2</ng-template>
+                    ...2
+                </clr-wizard-page>
+
+                <clr-wizard-page #pageThree>
+                    <ng-template clrPageTitle>Page 3</ng-template>
+                    ...3
+                </clr-wizard-page>
+
+                <clr-wizard-page>
+                    <ng-template clrPageTitle>Page 4</ng-template>
+                    ...4
+                </clr-wizard-page>
+
+                <clr-wizard-page #pageFive>
+                    <ng-template clrPageTitle>Page 5</ng-template>
+                    ...5
+                </clr-wizard-page>
+            </clr-wizard>

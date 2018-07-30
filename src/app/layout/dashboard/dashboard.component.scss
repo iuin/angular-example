@@ -1,9 +1,6 @@
 section {
     padding: 0 24px;
-}
-
-.row {
-    height: 100%;
+    margin-bottom: 24px;
 }
 
 .split-line-top {
@@ -35,13 +32,17 @@ section {
     .assets-min-height {
         min-height: 200px;
     }
-    .capacity-min-height {
-        min-height: 300px;
-    }
 }
 
 .auto-center {
     justify-content: center;
+    align-items: center;
+    display: flex;
+    display: -webkit-flex;
+}
+
+.auto-left {
+    justify-content: left;
     align-items: center;
     display: flex;
     display: -webkit-flex;

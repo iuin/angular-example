@@ -13,6 +13,7 @@ export class DashBoardComponent implements OnInit, OnDestroy {
     private parent: HTMLElement;
     constructor(private element: ElementRef) { }
 
+    public val: number = 33;
     ngOnInit(): void {
         let nativeElement: Element = this.element.nativeElement;
         // show vertical scroll bar
