@@ -276,7 +276,7 @@ Angular 的依赖注入机制，是根据在服务的构造函数里面的类型
  selector: 'toh-hero-button',
  template: `<button>OK</button>`
 })
-export class HeroButtonComponent implementsOnInit {
+export class HeroButtonComponent implements OnInit {
  ngOnInit() {
    console.log('The component is initialized');
   }
