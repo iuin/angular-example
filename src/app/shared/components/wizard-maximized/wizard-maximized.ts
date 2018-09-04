@@ -1,9 +1,9 @@
-import { Directive, ElementRef, OnInit, HostBinding, HostListener, Renderer2 } from '@angular/core';
+import { Directive, ElementRef, OnInit, Renderer2 } from '@angular/core';
 
 @Directive({
-    selector: '[fullScreenWizard]',
+    selector: '[wizardMaximized]',
 })
-export class FullScreenWizardDirective implements OnInit {
+export class WizardMaximizedDirective implements OnInit {
     private modalElement: Element;
     private hostTagName: string;
     constructor(el: ElementRef, private renderer: Renderer2) {

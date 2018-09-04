@@ -1,14 +1,14 @@
 import { NgModule } from '@angular/core';
 import { CommonModule } from '@angular/common';
 import { ClarityModule } from '@clr/angular';
-import { LAYOUT_DIRECTIVES,  } from './components';
 import { RouterModule } from '@angular/router';
 
-import { FullScreenWizardDirective } from "./components/full-screen-wizard/full-screen-wizard";
+import { WizardMaximizedDirective } from './components/wizard-maximized/wizard-maximized';
+
 @NgModule({
-    declarations: [LAYOUT_DIRECTIVES, FullScreenWizardDirective],
+    declarations: [ WizardMaximizedDirective],
     imports: [CommonModule, ClarityModule.forRoot(), RouterModule],
-    exports: [LAYOUT_DIRECTIVES, FullScreenWizardDirective],
+    exports: [ WizardMaximizedDirective],
     providers: [],
 })
 export class SharedModule { }
