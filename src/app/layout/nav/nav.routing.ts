@@ -2,14 +2,28 @@ import { Routes, RouterModule } from '@angular/router';
 import { NgModule } from '@angular/core';
 
 import { NavComponent } from "./nav.component";
-import { DashBoardComponent } from '../dashboard/dashboard.component';
 const routes: Routes = [
     {
         path: '', component: NavComponent,
         children: [
             {
+                path: '',
+                loadChildren: 'app/layout/dashboard/dashboard.module#DashboardModule',
+                data: { preload: false }
+            },
+            {
                 path: 'dashboard',
-                component: DashBoardComponent,
+                loadChildren: 'app/layout/dashboard/dashboard.module#DashboardModule',
+                data: { preload: false }
+            },
+            {
+                path: 'examples',
+                loadChildren: 'app/business/examples/examples.module#ExamplesModule',
+                data: { preload: false }
+            },
+            {
+                path: 'asset',
+                loadChildren: 'app/business/asset/asset.module#AssetModule',
                 data: { preload: false }
             }
         ]

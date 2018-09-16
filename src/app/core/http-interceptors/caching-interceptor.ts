@@ -8,19 +8,9 @@ import { Observable, of } from 'rxjs';
 import { startWith, tap } from 'rxjs/operators';
 
 import { RequestCache } from '../request-cache.service';
-import { searchUrl } from '../../business/package-search/package-search.service';
 
+const cacheUrl = [''];
 
-/**
- * If request is cachable (e.g., package search) and
- * response is in cache return the cached response as observable.
- * If has 'x-refresh' header that is true,
- * then also re-run the package search, using response from next(),
- * returning an observable that emits the cached response first.
- *
- * If not in cache or not cachable,
- * pass request through to next()
- */
 @Injectable()
 export class CachingInterceptor implements HttpInterceptor {
   constructor(private cache: RequestCache) {}
@@ -47,9 +37,7 @@ export class CachingInterceptor implements HttpInterceptor {
 /** Is this request cachable? */
 function isCachable(req: HttpRequest<any>) {
   // Only GET requests are cachable
-  return req.method === 'GET' &&
-    // Only npm package search is cachable in this app
-    -1 < req.url.indexOf(searchUrl);
+  return req.method === 'GET' && cacheUrl.some( e => e === req.url);
 }
 
 /**
