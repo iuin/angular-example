@@ -1,17 +1,18 @@
-<header class="header-4 nav-background" #headerNavs>
-    <div class="branding">
-        <a class="nav-link">
-            <span class="logo dell-emc-logo"></span>
-        </a>
-    </div>
-    <div class="header-nav" (click)="switchNav($event)" *ngFor="let menu of navMenus; index as i;">
-        <a href="javascript://" class="nav-link nav-text" [ngClass]="{'active': i == 0}" routerLink="{{menu.url}}">{{menu.name}}</a>
-    </div>
-    <div class="header-actions">
-        <a href="javascript://" class="nav-link nav-icon">
-            <clr-icon shape="cog"></clr-icon>
-        </a>
-    </div>
-</header>
-
-<router-outlet></router-outlet>
+<div class="main-container">
+    <header class="header-4 nav-background" #headerNavs>
+        <div class="branding">
+            <a class="nav-link">
+                <span class="logo dell-emc-logo"></span>
+            </a>
+        </div>
+        <div class="header-nav" (click)="switchNav($event)" *ngFor="let menu of navMenus; index as i;">
+            <a href="javascript://" class="nav-link nav-text" [ngClass]="{'active': i == 0}" routerLink="{{menu.url}}">{{menu.name}}</a>
+        </div>
+        <div class="header-actions">
+            <a href="javascript://" class="nav-link nav-icon">
+                <clr-icon shape="cog"></clr-icon>
+            </a>
+        </div>
+    </header>
+    <router-outlet></router-outlet>
+</div>

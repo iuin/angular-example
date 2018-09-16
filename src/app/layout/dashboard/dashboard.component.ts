@@ -1,12 +1,16 @@
-import { Component, OnInit, ViewChild, OnDestroy, ElementRef } from '@angular/core';
+import { Component, OnInit, ViewChild, OnDestroy, ElementRef, HostBinding } from '@angular/core';
 import { ClrWizard, ClrWizardPage } from "@clr/angular";
+import { slideInDownAnimation } from '../../core/animations/animations';
 
 @Component({
     selector: 'emc-dashboard',
     templateUrl: './dashboard.component.html',
-    styleUrls: ['./dashboard.component.scss']
+    styleUrls: ['./dashboard.component.scss'],
+    animations: [ slideInDownAnimation ]
 })
 export class DashBoardComponent implements OnInit, OnDestroy {
+
+    @HostBinding('@routeAnimation') routeAnimation = true;
 
     replJobsOptions: Object;
     backupJobsOptions: Object;

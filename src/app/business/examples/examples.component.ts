@@ -11,7 +11,7 @@ export class ExamplesComponent implements OnInit {
     case: any;
 
     constructor() {
-        this.case = new VerticalNavCases().partiallyNestedIconMenu;
+        this.case = new VerticalNavCases().iconMenu;
     }
 
     ngOnInit(): void { }

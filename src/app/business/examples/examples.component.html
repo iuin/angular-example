@@ -10,7 +10,7 @@
                 <clr-icon [attr.shape]="item.icon" *ngIf="item['icon']" clrVerticalNavIcon></clr-icon>
                 {{item.label}}
                 <clr-vertical-nav-group-children *clrIfExpanded>
-                    <a clrVerticalNavLink href="javascript:void(0)" *ngFor="let childItem of item.children">
+                    <a clrVerticalNavLink href="javascript:void(0)" routerLink="{{childItem.url}}" *ngFor="let childItem of item.children">
                         {{childItem.label}}
                     </a>
                 </clr-vertical-nav-group-children>
@@ -22,6 +22,5 @@
             </a>
 
         </ng-container>
-
     </clr-vertical-nav>
 </div>
