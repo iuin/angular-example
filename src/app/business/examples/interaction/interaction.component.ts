@@ -8,7 +8,7 @@ import { Component, OnInit, ElementRef } from '@angular/core';
 export class InteractionComponent implements OnInit {
 
     private list: HTMLElement;
-    private children:[Element] = [<Element>];
+    private children: Element[] = [];
     constructor() { }
 
     current: Element;
