@@ -1,0 +1,21 @@
+<div class="row" style="overflow-y: hidden; height: 100%;">
+    <div class="card" style="width:300px; margin-top: 0px; " resizable>
+        <div class="card-header">
+            <div class="toggle-switch">
+                <input type="checkbox" id="toggle_1" [(ngModel)]="flr" (change)="changeFlr()">
+                <label for="toggle_1">File Level Restore</label>
+            </div>
+        </div>
+        <div class="card-block">
+            <restore-vm-browse-tree #tree (checkedChange)="content.setContent($event)"></restore-vm-browse-tree>
+        </div>
+    </div>
+    <div class="card col-md" style="margin-left: 12px; margin-top: 0px; padding: 0px;">
+        <div class="card-header">
+            Content
+        </div>
+        <div class="card-block">
+            <restore-vm-browse-content #content (selectedChange)="tree.updateChecked($event)"></restore-vm-browse-content>
+        </div>
+    </div>
+</div>

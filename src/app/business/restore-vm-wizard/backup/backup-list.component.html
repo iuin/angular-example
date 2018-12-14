@@ -1,0 +1,44 @@
+<clr-datagrid [clrDgLoading]="loading" [(clrDgSingleSelected)]="selectedBackup" (clrDgRefresh)="refresh($event)">
+
+    <clr-dg-column style="max-width:100px;">
+        <ng-container>
+            Number
+        </ng-container>
+    </clr-dg-column>
+    <clr-dg-column>
+        <ng-container>
+            Date & Time
+        </ng-container>
+    </clr-dg-column>
+    <clr-dg-column>
+        <ng-container>
+            Plugin
+        </ng-container>
+    </clr-dg-column>
+    <clr-dg-column>
+        <ng-container>
+            Size
+        </ng-container>
+    </clr-dg-column>
+    <clr-dg-column>
+        <ng-container>
+            Server
+        </ng-container>
+    </clr-dg-column>
+    <clr-dg-column>
+        <ng-container>
+            Type
+        </ng-container>
+    </clr-dg-column>
+    <clr-dg-placeholder>No Backups</clr-dg-placeholder>
+    <clr-dg-row *ngFor="let backup of backups" [clrDgItem]="backup" (click)="changeSelected(backup)">
+        <clr-dg-cell style="max-width:100px;">{{ backup.labelNumber }}</clr-dg-cell>
+        <clr-dg-cell>{{ backup.creationTime | dateTime }}</clr-dg-cell>
+        <clr-dg-cell>{{ backup.pluginName }}</clr-dg-cell>
+        <clr-dg-cell>{{ backup.size | bytes }}</clr-dg-cell>
+        <clr-dg-cell>{{ backup.server }}</clr-dg-cell>
+        <clr-dg-cell>{{ backup.type }}</clr-dg-cell>
+    </clr-dg-row>
+    <mc-pagination [pagination]="pagination" ngProjectAs="clr-dg-footer">{{ 'COMMON.BACKUPS' |
+        translate }}</mc-pagination>
+</clr-datagrid>

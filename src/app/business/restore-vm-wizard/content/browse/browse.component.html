@@ -1,0 +1,12 @@
+<clr-datagrid #datagrid [clrDgLoading]="loading" [(clrDgSelected)]="selected"  (clrDgSelectedChange)="onSelectedChange()">
+
+    <clr-dg-placeholder>No Data</clr-dg-placeholder>
+
+    <clr-dg-column *ngFor="let col of columns" [clrDgSortBy]="col.name==='Name'?'name':null">
+            {{col.name}}
+    </clr-dg-column>
+    <clr-dg-row *ngFor="let data of datas" [clrDgItem]="data">
+            <clr-dg-cell>{{data.id}}</clr-dg-cell>
+            <clr-dg-cell>{{data.name}}</clr-dg-cell>
+    </clr-dg-row>
+</clr-datagrid>

@@ -1,0 +1,69 @@
+<clr-wizard #wizard [(clrWizardOpen)]="_open" clrWizardSize="xl" (clrWizardOnCancel)="doCancel()"
+    (clrWizardOnFinish)="doFinish()" wizardMaximized>
+    <clr-wizard-title>Restore VM</clr-wizard-title>
+
+    <clr-wizard-button [type]="'cancel'">Cancel</clr-wizard-button>
+    <clr-wizard-button [type]="'previous'">Back</clr-wizard-button>
+    <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
+    <clr-wizard-button [type]="'finish'">Finish</clr-wizard-button>
+
+    <!-- <clr-wizard-page>
+        <ng-template clrPageTitle>Backup List</ng-template>
+        <backup-list [client]="_client" (backupChange)="selectedBackup = $event"></backup-list>
+    </clr-wizard-page>
+
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Destination Client</ng-template>
+        <mc-radio name="destinationType" [inline]="false" [(ngModel)]="destinationType" (ngModelChange)="changeDestinationType()">
+            <mc-option value="original" [label]="'Restore to original vm'"></mc-option>
+            <mc-option value="different" [label]="'Restore to different vm'"></mc-option>
+            <mc-option value="new" [label]="'Restore to new vm'"></mc-option>
+        </mc-radio>
+    </clr-wizard-page> -->
+
+    <!-- <clr-wizard-page *ngIf="destinationType != 'new'"> -->
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Restore Content</ng-template>
+        <mc-restore-vm-content [(flr)]="_flr"></mc-restore-vm-content>
+    </clr-wizard-page>
+
+    <clr-wizard-page *ngIf="destinationType != 'new' && _flr">
+        <ng-template clrPageTitle>Destination Location</ng-template>
+        ...
+    </clr-wizard-page>
+
+    <clr-wizard-page *ngIf="destinationType == 'new'">
+        <ng-template clrPageTitle>Basic Config</ng-template>
+        ...
+    </clr-wizard-page>
+
+    <clr-wizard-page *ngIf="destinationType == 'new'">
+        <ng-template clrPageTitle>Location</ng-template>
+        ...
+    </clr-wizard-page>
+
+    <clr-wizard-page *ngIf="destinationType == 'new'">
+        <ng-template clrPageTitle>Host/Cluster</ng-template>
+        ...
+    </clr-wizard-page>
+
+    <clr-wizard-page *ngIf="destinationType == 'new'">
+        <ng-template clrPageTitle>Resource Pool</ng-template>
+        ...
+    </clr-wizard-page>
+
+    <clr-wizard-page *ngIf="destinationType == 'new'">
+        <ng-template clrPageTitle>Datastore</ng-template>
+        ...
+    </clr-wizard-page>
+
+    <clr-wizard-page>
+        <ng-template clrPageTitle>More Options</ng-template>
+        ...
+    </clr-wizard-page>
+
+    <clr-wizard-page>
+        <ng-template clrPageTitle>Summary</ng-template>
+        ...
+    </clr-wizard-page>
+</clr-wizard>
