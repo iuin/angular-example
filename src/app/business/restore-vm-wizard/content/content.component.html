@@ -2,11 +2,12 @@
     <div class="card" style="width:300px; margin-top: 0px; " resizable>
         <div class="card-header">
             <div class="toggle-switch">
-                <input type="checkbox" id="toggle_1" [(ngModel)]="flr" (change)="changeFlr()">
+                <input type="checkbox" id="toggle_1" [(ngModel)]="flr" (change)="changeFlr()" [disabled]="disabled">
                 <label for="toggle_1">File Level Restore</label>
             </div>
         </div>
-        <div class="card-block">
+        <div class="card-block" style="height: calc(93% + 3px);padding-bottom: 0px;padding-right: 0px;">
+            <span class="spinner spinner-inline" *ngIf="disabled"></span>
             <restore-vm-browse-tree #tree (checkedChange)="content.setContent($event)"></restore-vm-browse-tree>
         </div>
     </div>
@@ -14,7 +15,7 @@
         <div class="card-header">
             Content
         </div>
-        <div class="card-block">
+        <div class="card-block" style="height: calc(95% + 3px);padding: 0px;margin: 0px -1px;">
             <restore-vm-browse-content #content (selectedChange)="tree.updateChecked($event)"></restore-vm-browse-content>
         </div>
     </div>

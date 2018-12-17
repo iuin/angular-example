@@ -1,12 +1,32 @@
-<clr-datagrid #datagrid [clrDgLoading]="loading" [(clrDgSelected)]="selected"  (clrDgSelectedChange)="onSelectedChange()">
+<clr-datagrid #datagrid [clrDgLoading]="loading" [(clrDgSelected)]="selected" (clrDgSelectedChange)="onSelectedChange()"
+    style="margin-top: -25px;">
 
     <clr-dg-placeholder>No Data</clr-dg-placeholder>
 
     <clr-dg-column *ngFor="let col of columns" [clrDgSortBy]="col.name==='Name'?'name':null">
             {{col.name}}
     </clr-dg-column>
+
     <clr-dg-row *ngFor="let data of datas" [clrDgItem]="data">
-            <clr-dg-cell>{{data.id}}</clr-dg-cell>
-            <clr-dg-cell>{{data.name}}</clr-dg-cell>
+        <clr-dg-cell *ngFor="let col of columns">
+                <ng-container [ngSwitch]="col.name">
+                        <ng-container *ngSwitchCase="'Name'">
+                                <clr-icon [attr.shape]="data.icon" [attr.title]="data.name"></clr-icon>
+                                <a *ngIf="data.fileType === 'DIRECTORY'" class="link">
+                                    {{data.name}}
+                                </a>
+                                <ng-container *ngIf="data.fileType !== 'DIRECTORY'">
+                                    {{data.name}}
+                                </ng-container>
+                        </ng-container>
+                        <ng-container *ngSwitchCase="'Size'">
+                                {{data[col.key] | bytes}}
+                        </ng-container>
+                        <ng-container *ngSwitchDefault>
+                                {{data[col.key]}}
+                        </ng-container>
+                </ng-container>
+        </clr-dg-cell>
+
     </clr-dg-row>
 </clr-datagrid>

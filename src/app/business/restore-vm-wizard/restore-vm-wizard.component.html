@@ -7,7 +7,7 @@
     <clr-wizard-button [type]="'next'">Next</clr-wizard-button>
     <clr-wizard-button [type]="'finish'">Finish</clr-wizard-button>
 
-    <!-- <clr-wizard-page>
+    <clr-wizard-page>
         <ng-template clrPageTitle>Backup List</ng-template>
         <backup-list [client]="_client" (backupChange)="selectedBackup = $event"></backup-list>
     </clr-wizard-page>
@@ -19,12 +19,12 @@
             <mc-option value="different" [label]="'Restore to different vm'"></mc-option>
             <mc-option value="new" [label]="'Restore to new vm'"></mc-option>
         </mc-radio>
-    </clr-wizard-page> -->
+    </clr-wizard-page>
 
     <!-- <clr-wizard-page *ngIf="destinationType != 'new'"> -->
-    <clr-wizard-page>
+    <clr-wizard-page (clrWizardPageOnLoad)="content.init(selectedBackup)">
         <ng-template clrPageTitle>Restore Content</ng-template>
-        <mc-restore-vm-content [(flr)]="_flr"></mc-restore-vm-content>
+        <mc-restore-vm-content [(flr)]="_flr" #content></mc-restore-vm-content>
     </clr-wizard-page>
 
     <clr-wizard-page *ngIf="destinationType != 'new' && _flr">

@@ -1,10 +1,9 @@
 <tree-root [nodes]="nodes" [options]="options" #tree>
     <ng-template #treeNodeTemplate let-node="node" let-index="index">
         <div style="white-space:  nowrap;" class="checkbox">
-            <input id="checkrads{{node.data.id}}" type="checkbox" 
-            [(ngModel)]="node.data.checked" [checked]="node.data.checked"
-            (change)="check( node, $event)" [indeterminate]="node.data.indeterminate">
-            <label for="checkrads{{node.data.id}}">
+            <input id="checkrads{{node.data.id}}" type="checkbox" [(ngModel)]="node.data.checked" [checked]="node.data.checked"
+                (change)="check( node, $event)" [indeterminate]="node.data.indeterminate">
+            <label for="checkrads{{node.data.id}}" title="{{ node.data.name }}">
                 <span>
                     <clr-icon [attr.shape]="'folder'" size="18"></clr-icon>
                     {{ node.data.name }}

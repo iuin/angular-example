@@ -18,8 +18,8 @@ export class ContentBrowseComponent implements OnInit {
         let params = Object.assign({ datas: [], columns: [] }, content);
         this.datas = params.datas;
         this.columns = params.columns;
-        if (this.columns.length === 0) {
-            this.columns.push({ name: 'Name' })
+        if (!this.columns || this.columns.length === 0) {
+            this.columns = [{ order: 1, name: "Name", type: "String", key: "name" }];
         }
         if (this.datas) {
             this.selected = [];
