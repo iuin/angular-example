@@ -33,7 +33,6 @@ import { AssetModule } from './business/asset/asset.module';
             cookieName: 'My-Xsrf-Cookie',
             headerName: 'My-Xsrf-Header',
         }),
-
         // The HttpClientInMemoryWebApiModule module intercepts HTTP requests
         // and returns simulated server responses.
         // Remove it when a real server is ready to receive requests.
@@ -48,7 +47,7 @@ import { AssetModule } from './business/asset/asset.module';
         ChartModule.forRoot(require('highcharts'))
     ],
     declarations: [
-        AppComponent,
+        AppComponent
     ],
     providers: [
         AuthService,
